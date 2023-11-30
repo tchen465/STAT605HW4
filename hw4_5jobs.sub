@@ -5,31 +5,34 @@ universe = vanilla
 
 # Executable and arguments
 executable = hw4.sh
-arguments = /home/groups/STAT_DSCP/boss/cB58_Lyman_break.fit $(tgz_file)
+arguments = cB58_Lyman_break.fit $(tgz_file)
 
 # Transfer files
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files = /home/groups/STAT_DSCP/boss/tgz/$(tgz_file)
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, https://pages.stat.wisc.edu/~jgillett/DSCP/CHTC/callingR/packages_FITSio.tar.gz, hw4.R, /home/groups/STAT_\
+DSCP/boss/cB58_Lyman_break.fit, /home/groups/STAT_DSCP/boss/tgz/$(tgz_file)
 
 # Output files
-output = hw4_$(Cluster)_$(Process).out
-error = hw4_$(Cluster)_$(Process).err
-log = hw4_$(Cluster)_$(Process).log
+output = hw4_$(Process).out
+error = hw4_$(Process).err
+log = hw4_$(Process).log
 
 # Initial resource requirements
 request_cpus = 1
 request_memory = 1GB
 request_disk = 1GB
 
-# Queue jobs
-tgz_file = 3586.tgz
+# Dynamically set the tgz_file variable and queue jobs
+initialdir = $(tgz_dir)
+tgz_file = 3586
 queue
-tgz_file = 3587.tgz
+tgz_file = 3587
 queue
-tgz_file = 3588.tgz
+tgz_file = 3588
 queue
-tgz_file = 3589.tgz
+tgz_file = 3589
 queue
-tgz_file = 3590.tgz
+tgz_file = 3590
 queue
+
