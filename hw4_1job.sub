@@ -1,0 +1,26 @@
+# hw4_1job.sub
+
+# Job universe
+universe = vanilla
+
+# Executable and arguments
+executable = hw4.sh
+arguments = /home/groups/STAT_DSCP/boss/cB58_Lyman_break.fit 3586
+
+# Transfer files
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = /home/groups/STAT_DSCP/boss/tgz/3586.tgz
+
+# Output files
+output = hw4_1job.out
+error = hw4_1job.err
+log = hw4_1job.log
+
+# Initial resource requirements
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+# Queue job
+queue
