@@ -39,7 +39,7 @@ StanFlux = function(df){
 }
 # Read data and create a dataframe with new columns and details
 getDF = function(fileName){
-  Name <- paste("./data/",fileName,sep="")
+  Name <- paste("",fileName,sep="")
   df <- readFrameFromFITS(Name)
   if (ncol(df)>8){
     df <- df[,1:8]
